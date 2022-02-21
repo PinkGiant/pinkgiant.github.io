@@ -73,7 +73,6 @@ setTimeout('document.getElementById("xbtn").style="";',101);
     else if (i){document.getElementById('a').innerHTML = 'Demo version of web-assist does not support "help.go" . Please wait for the original version releases .';playText("Demo version of web-assist does not support help.go . Please wait for the original version releases .");}
     }
 document.onkeydown = function(e) {if(e.keyCode == '13') {a();return false;}};
-
 let currentCharacter
 const utterance = new SpeechSynthesisUtterance()
 function playText(text) {
