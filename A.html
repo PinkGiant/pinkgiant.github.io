@@ -1,0 +1,105 @@
+<style>
+  #xbtn{width:50%;height: 50%;position: fixed;top: 0;right:0;font-size: 200pt;font-family:calibri;background: white;border: none;}
+  @keyframes xbuttonannimation{
+    0%{background: white;transform: scale(1);}
+    50%{background: #ff171775;transform: scale(1.5);}
+    90%{background: #ff1717;transform: scale(2);}
+    100%{background: white;transform: scale(1);}
+    
+  }
+@keyframes av{
+  0%{opacity:1;position:fixed;left:1px;}
+  99%{opacity:0;position:fixed;left:-1000px;}
+  99%{opacity:0;position:fixed;top:-100000000px; left:-1000px;}
+}
+#adc{width:25%;height:100%;transform: rotate(180deg); background-color:transparent;border-radius: 5px;transition: 1s;position: fixed;}
+  .i{width:100%;height:15%;background-color:rgb(36, 36, 36);border-radius: 5px;font-family:Arial;color: white;transform: rotate(180deg);transition: 1s;}
+  #cv{position: fixed;bottom:0;right:0;}
+</style>
+<div style="font-family: calibri;font-size: 2em;position: fixed;left:0;bottom:0;width: 100%;height:50%;background-color:rgb(36,36,36);"></div>
+<div style="font-family: calibri;font-size: 2em;position: fixed;left: 24;bottom: 37px;width:97%;height:40%;background-color:#e91e633b;color: white;" id="a"></div>
+<div id="adc"></div>
+  <textarea id="text"></textarea>
+  <label for="speed">Speed</label>
+  <input type="number" name="spee" id="speed"  value="1">
+  <button id="play-button">Play</button>
+  <button id="pause-button">Pause</button>
+  <button id="stop-button">Stop</button>
+</div>
+<textarea id="html" style="width:50%;height: 50%;position: fixed;top: 0;left: 0;font-size: 20pt;font-family:calibri;" placeholder="Type your command!"></textarea>
+<button onclick="a();" id="xbtn">▸</button>
+<script>
+  xc();
+function xc(){
+document.getElementById('html').style ="width:50%;height: 50%;position: fixed;top: 0;left: 0;font-size: 20pt;font-family:calibri;";
+window.requestAnimationFrame(xc);
+}
+function a(){
+document.getElementById('xbtn').style="animation : xbuttonannimation 100ms linear 1;";
+setTimeout('document.getElementById("xbtn").style="";',101);
+  var a = /open htt([#])/i.exec(document.getElementById('html').value);
+  var g = /open youtube/i.exec(document.getElementById('html').value);
+  var go = /open google/i.exec(document.getElementById('html').value);
+  var cos = /search ([^]+)/i.exec(document.getElementById('html').value);
+  var co = /search on google ([^]+)/i.exec(document.getElementById('html').value);
+  var b = /open :([^]+)/i.exec(document.getElementById('html').value);
+  var bc = /open ([^]+)/i.exec(document.getElementById('html').value);
+  var c = /your name/i.exec(document.getElementById('html').value);
+  var d = /fuck|Bullshit|sex|Bull shit/i.exec(document.getElementById('html').value);
+  var f = /fuck you/i.exec(document.getElementById('html').value);
+  var e = /who are you/i.exec(document.getElementById('html').value);
+  var h = /introduce yourself/i.exec(document.getElementById('html').value);
+  var i = /help.go/i.exec(document.getElementById('html').value);
+  var j = /say ([^]+)/i.exec(document.getElementById('html').value);
+  var jss = /my name/i.exec(document.getElementById('html').value);
+  var k = /say fuck/i.exec(document.getElementById('html').value);
+  var bca = /open GTA([^]+)/i.exec(document.getElementById('html').value);
+  if (g) {window.open("http://www.youtube.com/");playText("Opening . youtube");}
+  else if (go) {window.open("http://www.google.com/");playText("Opening . Google");}
+  else if (co) {window.open("https://www.google.com/search?q="+co[1]);playText("Searching . "+co[1]);}
+  else if (cos) {window.open("https://www.google.com/search?q="+cos[1]);playText("Searching . "+cos[1]);}
+    else if (bca) {window.open("search-ms:displayname=Search%20Results%20in%20New%20folder%20(5)&crumb=System.Generic.String%3A(GTA%20V)&crumb=location:E%3A%5CNew%20folder%20(5)");playText("Opening GTA 5");}
+   else if (a) {window.open(a);playText("Opening . "+(a[1]));}
+    else if (b){window.open(b[1]);playText("Opening . " + (b[1]));}
+    else if (bc){window.open("http://"+bc[1]);playText("Opening . " + (bc[1]));}
+    else if (c){document.getElementById('a').innerHTML = "My name is web-assist.";playText("My name is web-assist .");}
+    else if (k){document.getElementById('a').innerHTML = "I can't <br> Why you always say **** words?";playText('I cant ! Why you always say shit words?');}
+    else if (d){ax('Prohivited to say spoiled words !','Alert!');document.getElementById('a').innerHTML = "Can't you stop ?<br> Why you always say **** words?";playText("Can't you stop ? Why you always say shit words?");}
+    else if (jss){document.getElementById('a').innerHTML = "Your name is "+localStorage.rlueroftheorganiztionname_myusernameisthatbycurrent+"";playText("Your name is "+localStorage.rlueroftheorganiztionname_myusernameisthatbycurrent);}
+    else if (j){document.getElementById('a').innerHTML = "saying...["+j[1]+"]";playText(j[1]);}
+    else if (f){document.getElementById('a').innerHTML = "You too";playText("You too!");}
+    else if (e){document.getElementById('a').innerHTML = "I am web-assist . A virtual web-assistant. Can I help you ?   Type 'help.go' to know what can I do.";playText("I am web-assist . A virtual web-assistant. Can I help you ? Type help.go to know what can I do.");}
+    else if (h){document.getElementById('a').innerHTML = 'I am web-assist . A virtual web-assistant. A bad programmer named Samiul Samir made me . I can do works easier . Type "help.go" to know what can I do.';playText("I am web-assist . A virtual web-assistant. A bad programmer named Samiul Samir made me . I can do works easier . Type help.go to know what can I do.");}
+    else if (i){document.getElementById('a').innerHTML = 'Demo version of web-assist does not support "help.go" . Please wait for the original version releases .';playText("Demo version of web-assist does not support help.go . Please wait for the original version releases .");}
+    }
+document.onkeydown = function(e) {if(e.keyCode == '13') {a();return false;}};
+
+let currentCharacter
+const utterance = new SpeechSynthesisUtterance()
+function playText(text) {
+  if (speechSynthesis.paused && speechSynthesis.speaking) {
+    return speechSynthesis.resume()
+  }
+  if (speechSynthesis.speaking) return
+  utterance.text = text
+  utterance.rate =  0.8;
+  speechSynthesis.speak(utterance)
+}
+function stopText() {
+  speechSynthesis.resume()
+  speechSynthesis.cancel()
+}
+
+</script>
+<script>
+  function acvb(s){
+  
+    s.style = "animation : av 510ms 1;"
+    setTimeout( function(){s.style.display = "none";}, 500);
+  }
+  var Notifications = 0;
+  var c = 0;
+  function ax(bc,axcc) {
+    Notifications ++;document.getElementById('adc').innerHTML += "<div onclick='acvb(this)' class='avbc'><br><div class='i'>"+axcc+"<br><br>"+bc+" <a id='cv'>tap to close</a></div></div>";}</script>
+
+</script>
