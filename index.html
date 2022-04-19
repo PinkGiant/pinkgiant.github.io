@@ -27,9 +27,11 @@
         #mainii{width: 70%;text-align: left; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: larger;}
         </style>
     </head><body>
-        <div id="options" style="display: none; width: 40%;height: 50%;background: white; filter: drop-shadow(2px 4px 6px black);border-radius: 1%;z-index: 11;position: fixed;top: 4%;right: 4%;">
-            <img style="width: auto;height: 20%;position: absolute;top: 0;" src="assets/expand.png">
-            <div style="width: auto;height: 20%;position: absolute;top: 18%;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">fullscreen</div>
+        <div id="options" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; display: none; width: 40%;height: 50%;background: white; filter: drop-shadow(2px 4px 6px black);border-radius: 1%;z-index: 11;position: fixed;top: 4%;right: 4%;">
+            <img onclick="fullscreen();" style="width: auto;height: 20%;position: absolute;top: 0;" src="assets/expand.png">
+            <div onclick="fullscreen();" style="width: auto;height: 20%;position: absolute;top: 18%;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">fullscreen</div>
+            <img onclick="document.location.reload();" style="width: auto;height: 20%;position: absolute;top: 0;left: 44%;" src="assets/reload.png">
+            <div onclick="document.location.reload();" style="width: auto;height: 20%;position: absolute;top: 18%;left: 43.9%;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Reload</div>
             <div onclick="hideop();" style="width: auto;height:auto;font-size: xx-large; position: absolute;top: -10px;right: 0; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">&Cross;</div>
         </div>
         
@@ -75,7 +77,7 @@ I have created this first time in my github jurney. Don't forget to follow me on
     <img src="assets/sc3.png" style="width: 60%;height: auto;"><br><br>
     <div id="mainii">i. with a look of a desktop Assistant</div><br><br>
     <img src="assets/sc4.png" style="width: 60%;height: auto;"><br><br>
-    <div id="mainii">ii. With major commands.<br><br>
+    <div id="mainii">ii. With major commans.<br><br>
 I have created this for test use. Don't forget to follow me on github. This project will release soon. When I publish this project users can use for fun with customization of command and works in HTML webpage. Only in a browser from any device or operating system.
 <br>
 <a href="#comingsoon" id="#comingsoon">Visit site (coming soon)</a>
@@ -92,9 +94,19 @@ document.getElementById("logos").style.filter = "hue-rotate("+a+"deg)";
 a++;
 }
 setInterval("dac();",1);
-
 function showop(){document.getElementById("options").style.display ="";}
 function hideop(){document.getElementById("options").style.display ="none";}
+function fullscreen(){
+    var dcument = document.querySelector("html");
+if (dcument.requestFullscreen) {dcument.requestFullscreen();}
+else if (dcument.msRequestFullscreen) {dcument.msRequestFullscreen();
+}
+else if (dcument.mozRequestFullScreen) {dcument.mozRequestFullScreen();
+}
+else if (dcument.webkitRequestFullscreen) {dcument.webkitRequestFullscreen();
+}
+}
+
 </script>
 </body>
 </html>
